@@ -31,7 +31,7 @@ int UltrasonicSensor::getDistance()
     pmi(echo_pin);
     int distance = pulseIn(echo_pin, HIGH, PULSE_TIMEOUT) / 58;
 
-    return (distance > 2) ? distance : MAX_DISTANCE;
+    return (distance != 0) ? distance : MAX_DISTANCE;
 }
 
 #endif
